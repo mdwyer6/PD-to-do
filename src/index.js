@@ -17,7 +17,7 @@ class Index extends React.Component {
       value: this.state[attr],
       requestChange: (newVal) => {
         this.setState({
-          current: newVal
+          [attr]: newVal
         });
       }
     }
