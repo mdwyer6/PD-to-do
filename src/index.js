@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import _ from 'lodash';
 import registerServiceWorker from './registerServiceWorker';
 
 class Index extends React.Component {
@@ -13,8 +14,8 @@ class Index extends React.Component {
 
   linkState(attr) {
     return {
-      value: this.state[newVal],
-      requestChange: (attr) => {
+      value: this.state[attr],
+      requestChange: (newVal) => {
         this.setState({
           current: newVal
         });
@@ -25,7 +26,7 @@ class Index extends React.Component {
   handleClick(e) {
     this.setState({
       current: '',
-      items: this.state.items.concat(this.state.current)
+      items: _.concat(this.state.items, this.state.current)
     })
   }
 
