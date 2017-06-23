@@ -1,23 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
 
 class Index extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
     this.state = {
       current: '',
       items: []
     }
   }
 
-  linkState(newVal) {
+  linkState(attr) {
     return {
-      value: this.state.current,
-      requestChange: (newVal) => {
+      value: this.state[newVal],
+      requestChange: (attr) => {
         this.setState({
           current: newVal
         });

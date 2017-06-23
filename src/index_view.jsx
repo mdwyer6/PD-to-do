@@ -123,8 +123,8 @@ module.exports = function() {
         <div className="pd-artboard-8">
             <div className="pd-0-0">
                 <div className="pd-0-0-0">
-                    <input className="pd-todoinput-9" placeholder="Enter to do item" type="text" name={"::"+this.value+""} valueLink={this.linkState('{{this.value}}')}></input>
-                    <button className="pd-add-1" type="submit" onClick={this.handleClick}>
+                    <input className="pd-todoinput-9" placeholder="Enter to do item" type="text" name="::current" valueLink={this.linkState('current')}></input>
+                    <button className="pd-add-1" type="submit" onClick={this.handleClick.bind(this)}>
                         <span className="pd-0-0-0-1-0">+</span>
                     </button>
                 </div>
